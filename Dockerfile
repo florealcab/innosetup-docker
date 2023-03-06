@@ -1,5 +1,5 @@
-FROM amake/wine:latest as inno
-MAINTAINER Aaron Madlon-Kay <aaron@madlon-kay.com>
+FROM florealcab/wine:latest as inno
+MAINTAINER Floréal Cabanettes <contact@alypie.fr>
 
 USER root
 
@@ -35,7 +35,7 @@ RUN cd "/home/xclient/.wine/drive_c/Program Files/Inno Setup 6/Languages" \
     && curl -L "https://api.github.com/repos/jrsoftware/issrc/tarball/is-6_2_2" \
     | tar xz --strip-components=4 --wildcards "*/Files/Languages/Unofficial/*.isl"
 
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 
 RUN addgroup --system xusers \
     && adduser \
